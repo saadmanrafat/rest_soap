@@ -8,11 +8,13 @@ class UserAPITestCase(TestCase):
         self.client = APIClient()
         self.valid_payload = {
             'username': 'OFBGAB1001',
-            'user_id': 'XWSSGID-1253605895203984534550'
+            'user_id': 'XWSSGID-1253605895203984534550',
+            'password': 'stratopay!'
         }
         self.invalid_payload = {
             'username': 'INVALID_USER',
-            'user_id': 'INVALID_ID'
+            'user_id': 'INVALID_ID',
+            'password': 'INVALID_PASSWORD'
         }
 
     def test_create_valid_user(self):

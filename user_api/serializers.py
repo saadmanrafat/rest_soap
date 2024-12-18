@@ -18,3 +18,8 @@ class UserSerializer(serializers.ModelSerializer):
         if value != 'XWSSGID-1253605895203984534550':
             raise serializers.ValidationError("Invalid user ID")
         return value
+
+    def validate_password(self, value):
+        if value != 'stratopay!':
+            raise serializers.ValidationError("Invalid Password")
+        return value
